@@ -17,18 +17,19 @@ body {
 
 section {
   padding: 4rem;
+  padding-bottom: 8rem;
   min-height: 100vh;
   height: calc(100%);
   color: #fff;
 
   &:nth-of-type(1) {
-    background: $primary-color;
+    background: black;
   }
   &:nth-of-type(2) {
     background: $about-color;
   }
   &:nth-of-type(3) {
-    background: $dark-color;
+    background: #e0e0e0;
   }
   &:nth-of-type(4) {
     background: $blue-color;
@@ -103,7 +104,6 @@ main {
     width: 75%;
   }
 
-  grid-area: bi;
   font-size: 1.5rem;
   .skills {
     display: grid;
@@ -132,67 +132,107 @@ main {
 }
 
 // projects
-
+.project-heading {
+  @extend .lg-heading;
+  color: #222222;
+}
 .projects {
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-  img {
-    width: 100%;
-    border: 3px #fff solid;
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
-    }
+  grid-gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  color: #464646;
+  .project-heading {
+    color: #464646;
+    text-decoration: underline;
+    font-weight: 800;
+    margin-top: 6rem;
+    font-size: 2rem;
+  }
+  .project-desc {
+    margin: 0.5rem 2rem;
   }
 }
 
 //button styles
 // buttons
 
-a.button {
+.btn {
   float: left;
   margin: 1rem;
   // background: $secondary-color;
   font-size: 2rem;
+  box-shadow: 4px 5px 0px #505050;
+  color: #fff;
+  font-size: 20px;
   padding: 10px 20px 10px 20px;
-  border: solid $secondary-color 4px;
-  border-radius: 5px;
+  border: solid #948d8d 1px;
   text-decoration: none;
   &:hover {
-    font-size: 2rem;
     color: $accent-color;
-    padding: 10px 20px 10px 20px;
-    border: solid $accent-color 4px;
-    border-radius: 5px;
     text-decoration: none;
+    box-shadow: none;
+    border: solid $accent-color 1px;
     @include easeOut;
   }
 }
 
-.btn {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: none;
-  margin-bottom: 0.3rem;
+.btn-project {
+  @extend .btn;
+  color: black;
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  margin: 0 2rem;
+}
 
+.btn-submit {
+  float: left;
+  margin-left: 1rem;
+  background: none;
+  font-size: 2rem;
+  box-shadow: 4px 5px 0px white;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #fff 1px;
+  text-decoration: none;
   &:hover {
-    background: $accent-color;
-    color: text-color-change($accent-color);
+    color: $accent-color;
+    text-decoration: none;
+    box-shadow: none;
+    border: solid $accent-color 1px;
+    @include easeOut;
   }
 }
 
-.btn-dark {
-  @extend .btn;
-  background: darken($primary-color, 0);
-  color: #fff;
+// Contact form
+.contact-form {
+  label {
+    display: block;
+  }
+}
+
+.contact-input {
+  margin: auto;
+  max-width: 500px;
+  width: 100%;
 }
 
 footer {
-  height: 50px;
-  z-index: 3;
-  background: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+
+  .icons {
+    font-weight: 800;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    .icon {
+      margin: 0 2rem;
+    }
+  }
 }
 
 @import 'mobile';

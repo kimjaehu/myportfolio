@@ -1,15 +1,9 @@
 // Widescreens
 @include mediaXl {
-  .projects {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 // Desktop
 @include mediaLg {
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 // Tablet
@@ -27,43 +21,17 @@
       #summary {
         width: 100%;
       }
+      .skills {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
   .projects {
+    grid-template-columns: repeat(1, 1fr);
     margin-top: 3rem;
     float: none;
     align-items: center;
     text-align: center;
-    div {
-      float: left;
-      padding: 5px;
-    }
-
-    .icon {
-      align-items: center;
-      text-align: center;
-      width: 100%;
-      margin: 5px;
-    }
-    .desc {
-      width: 100%;
-    }
-    .tech {
-      float: left;
-      width: 100%;
-    }
-    .skill-icon {
-      size: 1rem;
-      height: 50px;
-      background: white;
-      border-radius: 15%;
-      border: #fff 3px solid;
-      padding: 5px;
-      margin: 5px;
-    }
-  }
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -131,7 +99,6 @@
   }
 
   .bio {
-    grid-area: bi;
     font-size: 1.5rem;
     #summary {
       width: 100%;
