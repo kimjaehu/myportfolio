@@ -1,0 +1,163 @@
+// Widescreens
+@include mediaXl {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Desktop
+@include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Tablet
+@include mediaMd {
+  main {
+    margin: auto;
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .bio {
+      #summary {
+        width: 100%;
+      }
+    }
+  }
+  .projects {
+    margin-top: 3rem;
+    float: none;
+    align-items: center;
+    text-align: center;
+    div {
+      float: left;
+      padding: 5px;
+    }
+
+    .icon {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      margin: 5px;
+    }
+    .desc {
+      width: 100%;
+    }
+    .tech {
+      float: left;
+      width: 100%;
+    }
+    .skill-icon {
+      size: 1rem;
+      height: 50px;
+      background: white;
+      border-radius: 15%;
+      border: #fff 3px solid;
+      padding: 5px;
+      margin: 5px;
+    }
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Smartphone
+@include mediaSm {
+  // Headings
+  .section {
+    padding: 0rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 600;
+
+    &.lg-heading {
+      font-size: 6rem;
+      margin: 0;
+    }
+
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  main#home h1 {
+    margin-top: 10vh;
+  }
+
+  .lg-heading {
+    font-size: 3rem;
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 2rem;
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+    .portrait {
+      background: $portraitSm-image;
+      width: 150px;
+      height: 150px;
+    }
+  }
+  a.button {
+    align-items: center;
+    width: 100%;
+  }
+
+  .bio {
+    grid-area: bi;
+    font-size: 1.5rem;
+    #summary {
+      width: 100%;
+    }
+    .skills {
+      grid-template-columns: repeat(2, 1fr);
+
+      .skill-icon {
+        size: 1rem;
+        height: 50px;
+        background: white;
+        border-radius: 15%;
+        border: #fff 3px solid;
+        padding: 5px;
+      }
+      .caption {
+        font-size: 0.8rem;
+      }
+      .column {
+        width: 100%;
+        padding: 5px;
+      }
+    }
+  }
+
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
