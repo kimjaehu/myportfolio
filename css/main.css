@@ -1,0 +1,376 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #6fcb9f;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(3.5px, -3.5px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: #fffe9a;
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    background: #666547;
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 250px;
+      height: 250px;
+      background: url(../img/portrait.jpg);
+      border-radius: 0%;
+      border: solid 5px #6fcb9f; }
+  .menu .nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #fb2e01; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 700;
+    color: #6fcb9f;
+    text-decoration: none;
+    transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #fb2e01;
+      transition: all 0.5s ease-out; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #666547;
+  color: #6fcb9f;
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; }
+  body#bg-img {
+    background-attachment: fixed;
+    background-size: cover; }
+    body#bg-img:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(102, 101, 71, 0.9);
+      z-index: -1; }
+
+section {
+  padding: 4rem;
+  padding-bottom: 8rem;
+  min-height: 100vh;
+  height: calc(100%);
+  color: #fff; }
+  section:nth-of-type(1) {
+    background: black; }
+  section:nth-of-type(2) {
+    background: #1b3242; }
+  section:nth-of-type(3) {
+    background: #e0e0e0; }
+  section:nth-of-type(4) {
+    background: #75acc0; }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600; }
+  h1.lg-heading, h1.project-heading,
+  h2.lg-heading,
+  h2.project-heading,
+  h3.lg-heading,
+  h3.project-heading {
+    font-size: 8rem; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    font-size: 2rem; }
+
+a {
+  color: #fffeb3;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+
+.text-secondary {
+  margin-top: 4rem;
+  color: #ffe28a; }
+
+.text-skills {
+  color: #ffe28a;
+  margin-top: 4rem;
+  margin-bottom: 2rem; }
+
+main {
+  height: 100%; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 20vh; }
+
+.aboutinfo {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimg bi'; }
+
+.bioimage {
+  grid-area: bioimg;
+  margin: auto;
+  border-radius: 50%;
+  border: #fffeb3 3px solid; }
+
+.bio {
+  font-size: 1.5rem; }
+  .bio #summary {
+    width: 75%; }
+  .bio .skills {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(5, 1fr);
+    align-content: center;
+    text-align: center; }
+    .bio .skills .skill-icon {
+      align-items: center;
+      text-align: center;
+      height: 100px;
+      background: white;
+      border-radius: 15%;
+      border: #fff 3px solid;
+      padding: 2px; }
+    .bio .skills .caption {
+      font-size: 2rem; }
+    .bio .skills .column {
+      float: left;
+      width: 75%;
+      padding: 5px; }
+
+.project-heading {
+  color: #222222; }
+
+.projects {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  color: #464646; }
+  .projects .project-heading {
+    color: #464646;
+    text-decoration: underline;
+    font-weight: 800;
+    margin-top: 6rem;
+    font-size: 2rem; }
+  .projects .project-desc {
+    margin: 0.5rem 2rem; }
+
+.btn, .btn-project {
+  float: left;
+  margin: 1rem;
+  font-size: 2rem;
+  box-shadow: 4px 5px 0px #505050;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #948d8d 1px;
+  text-decoration: none; }
+  .btn:hover, .btn-project:hover {
+    color: #fb2e01;
+    text-decoration: none;
+    box-shadow: none;
+    border: solid #fb2e01 1px;
+    transition: all 0.5s ease-out; }
+
+.btn-project {
+  color: black;
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  margin: 0 2rem; }
+
+.btn-submit {
+  float: left;
+  margin-left: 1rem;
+  background: none;
+  font-size: 2rem;
+  box-shadow: 4px 5px 0px white;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #fff 1px;
+  text-decoration: none; }
+  .btn-submit:hover {
+    color: #fb2e01;
+    text-decoration: none;
+    box-shadow: none;
+    border: solid #fb2e01 1px;
+    transition: all 0.5s ease-out; }
+
+.contact-form label {
+  display: block; }
+
+.contact-input {
+  margin: auto;
+  max-width: 500px;
+  width: 100%; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rem; }
+  footer .icons {
+    font-weight: 800;
+    margin: auto;
+    align-items: center;
+    text-align: center; }
+    footer .icons .icon {
+      margin: 0 2rem; }
+
+@media screen and (max-width: 768px) {
+  main {
+    margin: auto;
+    align-items: center;
+    text-align: center; }
+    main .lg-heading, main .project-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+    main .bio #summary {
+      width: 100%; }
+    main .bio .skills {
+      grid-template-columns: repeat(3, 1fr); }
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 3rem;
+    float: none;
+    align-items: center;
+    text-align: center; } }
+
+@media screen and (max-width: 500px) {
+  .section {
+    padding: 0rem; }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 600; }
+    h1.lg-heading, h1.project-heading,
+    h2.lg-heading,
+    h2.project-heading,
+    h3.lg-heading,
+    h3.project-heading {
+      font-size: 6rem;
+      margin: 0; }
+    h1.sm-heading,
+    h2.sm-heading,
+    h3.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 0.5rem;
+      font-size: 1.5rem; }
+  main#home h1 {
+    margin-top: 10vh; }
+  .lg-heading, .project-heading {
+    font-size: 3rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 2rem; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url(../img/portrait_small.jpg);
+      width: 150px;
+      height: 150px; }
+  a.button {
+    align-items: center;
+    width: 100%; }
+  .bio {
+    font-size: 1.5rem; }
+    .bio #summary {
+      width: 100%; }
+    .bio .skills {
+      grid-template-columns: repeat(2, 1fr); }
+      .bio .skills .skill-icon {
+        size: 1rem;
+        height: 50px;
+        background: white;
+        border-radius: 15%;
+        border: #fff 3px solid;
+        padding: 5px; }
+      .bio .skills .caption {
+        font-size: 0.8rem; }
+      .bio .skills .column {
+        width: 100%;
+        padding: 5px; }
+  .projects {
+    grid-template-columns: repeat(1, 1fr); } }
