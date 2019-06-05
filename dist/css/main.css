@@ -288,6 +288,12 @@ footer {
     footer .icons .icon {
       margin: 0 2rem; }
 
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .bio #summary {
+    width: 100%; }
+  .bio .skills {
+    grid-template-columns: repeat(4, 1fr); } }
+
 @media screen and (max-width: 768px) {
   main {
     margin: auto;

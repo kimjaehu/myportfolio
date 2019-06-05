@@ -4,6 +4,14 @@
 
 // Desktop
 @include mediaLg {
+  .bio {
+    #summary {
+      width: 100%;
+    }
+    .skills {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }
 
 // Tablet
